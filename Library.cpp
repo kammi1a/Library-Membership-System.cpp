@@ -1,59 +1,68 @@
-#include <iostream>
-#include <vector>
-#include <string>
-using namespace std;
+#include <bits.stdc++.h>
 
+// Defining a struct to represent a library member with name, address, and contact details.
 struct LibraryMember {
     string name;
     string address;
     string contact;
-    LibraryMember(const string& n, const string& addr, const string& cont): name(n), address(addr), contact(cont) {}
 };
 
+// Declaring a vector to store library members globally.
+vector<LibraryMember> members;
 
-void registerMember(vector<LibraryMember>& members, const string& name, const string& address, const string& contact) {
-    LibraryMember newMember(name, address, contact);
-    members.push_back(newMember);
+// Function to register a new library member.
+void registerMember(const string& name, const string& address, const string& contact) {
+    members.push_back({name, address, contact});
     cout << "Member " << name << " registered successfully!\n";
 }
 
-
-void renewMembership(vector<LibraryMember>& members, const string& name) {
-    for (auto& member : members) {
-        if (member.name == name) {
-            cout << "Membership renewed for " << name << endl;
-            return;
-        }
+// Function to renew the membership of a library member.
+void renewMembership(const string& name) {
+    // Finding the member with the specified name.
+    auto it = find_if(members.begin(), members.end(), [&name](const LibraryMember& m) { return m.name == name; });
+    // Checking if member exists.
+    if (it != members.end()) {
+        cout << "Membership renewed for " << name << endl;
+    } else {
+        cout << "Member not found!\n";
     }
-    cout << "Member not found!\n";
 }
 
-
-void cancelMembership(vector<LibraryMember>& members, const string& name) {
-    for (auto it = members.begin(); it != members.end(); ++it) {
-        if (it->name == name) {
-            members.erase(it);
-            cout << "Membership canceled for " << name << endl;
-            return;
-        }
+// Function to cancel the membership of a library member.
+void cancelMembership(const string& name) {
+    auto it = find_if(members.begin(), members.end(), [&name](const LibraryMember& m) { return m.name == name; });
+    if (it != members.end()) {
+        // Removing the member from the vector.
+        members.erase(it);
+        cout << "Membership canceled for " << name << endl;
+    } else {
+        // Printing a message if member not found.
+        cout << "Member not found!\n";
     }
-    cout << "Member not found!\n";
 }
 
+void displayAllMembers() {
+    cout << "All Members:\n";
+    // Looping through all members and printing their details.
+    for (const auto& member : members) {
+        cout << "Name: " << member.name << ", Address: " << member.address << ", Contact: " << member.contact << endl;
+    }
+}
 
 int main() {
-    vector<LibraryMember> members;
     int choice;
     do {
+        // Printing menu for user choice.
         cout << "Choose an option:\n";
         cout << "1. Register member\n";
         cout << "2. Renew membership\n";
         cout << "3. Cancel membership\n";
         cout << "4. Display all members\n";
         cout << "5. Exit\n";
+        // Reading user's choice.
         cin >> choice;
-        cin.ignore(); 
-
+        cin.ignore();  // Clearing input buffer.
+        
         string name, address, contact;
         switch (choice) {
             case 1:
@@ -63,25 +72,22 @@ int main() {
                 getline(cin, address);
                 cout << "Enter contact: ";
                 getline(cin, contact);
-                registerMember(members, name, address, contact);
+                registerMember(name, address, contact);
                 break;
             case 2:
                 cout << "Enter name to renew membership: ";
                 getline(cin, name);
-                renewMembership(members, name);
+                renewMembership(name);
                 break;
             case 3:
                 cout << "Enter name to cancel membership: ";
                 getline(cin, name);
-                cancelMembership(members, name);
+                cancelMembership(name);
                 break;
             case 4:
-                cout << "All Members:\n";
-                for (const auto& member : members) {
-                    cout << "Name: " << member.name << ", Address: " << member.address << ", Contact: " << member.contact << endl;
-                }
+                displayAllMembers();
                 break;
         }
-    } while (choice != 5);
+    } while (choice != 5); // Loop until user chooses to exit.
     return 0;
 }
