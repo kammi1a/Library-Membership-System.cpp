@@ -1,0 +1,51 @@
+This code represents a console application for managing library members. It allows registering new members, renewing memberships, and canceling memberships. The user interacts with the application through a menu, selecting the desired actions.
+
+Program Structure
+
+The program consists of the following main parts:
+
+Structure LibraryMember: Describes a library member and contains information about their name, address, and contact details.
+
+Library Member Management Functions:
+
+registerMember: Registers a new library member.
+renewMembership: Renews the membership for an existing member.
+cancelMembership: Cancels the membership for an existing member.
+Main Function main: Implements a menu for user interaction and calls the corresponding functions based on user choice.
+
+Usage
+
+Upon running the program, the user is prompted to choose one of the following actions:
+
+Register New Member (1): The user enters information about a new member (name, address, contact details), and the member is added to the list.
+Renew Membership (2): The user enters the name of an existing member, and if found in the list, their membership is renewed.
+Cancel Membership (3): The user enters the name of an existing member, and if found in the list, their membership is canceled.
+Display All Members (4): Displays a list of all library members with their respective data (name, address, contact details).
+Exit (5): Exits the program.
+Dependencies
+
+The program utilizes standard input-output (iostream), vector operations (vector), and string manipulation (string).
+
+Example Usage
+
+```
+Choose an option:
+1. Register member
+2. Renew membership
+3. Cancel membership
+4. Display all members
+5. Exit
+Sample Interaction
+```
+
+
+
+
+User selects option 1 to register a new member.
+After entering name, address, and contact details, the new member is added to the list.
+User selects option 4 to display all library members.
+All library members are displayed on the screen along with their data.
+User selects option 5 to exit the program.
+Notes
+
+The program does not handle invalid user input.
