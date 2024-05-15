@@ -15,4 +15,5 @@ Ensure data integrity and accuracy in managing member records.
 Implement error handling mechanisms to handle unexpected situations gracefully.
 
 **Screenshots:** 
-[]([https://github.com/kammi1a/Library-Membership-System.cpp](https://github.com/kammi1a/Library-Membership-System.cpp/blob/main/Снимок%20экрана%202024-05-15%20в%2019.45.37.jpeg))
+![Example Image](images/example.png)
+
