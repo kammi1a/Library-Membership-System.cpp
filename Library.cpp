@@ -1,6 +1,8 @@
 #include <iostream>
 #include <vector>
 #include <string>
+#include <algorithm>
+using namespace std;
 
 // Defining a struct to represent a library member with name, address, and contact details.
 struct LibraryMember {
@@ -62,6 +64,7 @@ int main() {
         cout << "4. Display all members\n";
         cout << "5. Exit\n";
         // Reading user's choice.
+        cout<<"Enter your choice: ";
         cin >> choice;
         cin.ignore();  // Clearing input buffer.
         
