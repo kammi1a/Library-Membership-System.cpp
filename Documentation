@@ -1,5 +1,7 @@
 1. Project's purpose
-The Library Membership Management System is designed to streamline the process of managing library memberships. It allows users to register new members, renew existing memberships, cancel memberships, and display all members' details. The system ensures data integrity, provides a user-friendly command-line interface, and offers functionalities for data persistence and report generation.
+The Library Membership Management System is designed to streamline the process of managing library memberships. 
+It allows users to register new members, renew existing memberships, cancel memberships, and display all members' details. 
+The system ensures data integrity, provides a user-friendly command-line interface, and offers functionalities for data persistence and report generation.
 
 2. Design Decisions:
 - Struct Definition: A LibraryMember struct is used to encapsulate the details of a library member, including name, address, and contact information.
@@ -24,4 +26,5 @@ Vector: A vector named members is used to store instances of LibraryMember, prov
 
 6. How to Use the Software:
 - Installation: No installation required. Simply compile the provided code using a C++ compiler.
-- Setup Instructions: Compile the code and run the executable. Follow the on-screen prompts to perform various operations such as registering members, renewing memberships, canceling memberships, and displaying all members' details.
+- Setup Instructions: Compile the code and run the executable. 
+Follow the on-screen prompts to perform various operations such as registering members, renewing memberships, canceling memberships, and displaying all members' details.
