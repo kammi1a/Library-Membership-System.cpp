@@ -14,4 +14,5 @@ Allow users to view all existing members' details at any time.
 Ensure data integrity and accuracy in managing member records.
 Implement error handling mechanisms to handle unexpected situations gracefully.
 
-**Screenshots:**
+**Screenshots:** 
+![Описание изображения](Снимок экрана 2024-05-15 в 19.45.37.png)
