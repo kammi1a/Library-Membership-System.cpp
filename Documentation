@@ -28,15 +28,13 @@ The program utilizes standard input-output (iostream), vector operations (vector
 
 Example Usage
 
-```
-Choose an option:
+```Choose an option:
 1. Register member
 2. Renew membership
 3. Cancel membership
 4. Display all members
 5. Exit
-Sample Interaction
-```
+Sample Interaction```
 
 
 
