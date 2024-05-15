@@ -1,4 +1,6 @@
-#include <bits.stdc++.h>
+#include <iostream>
+#include <vector>
+#include <string>
 
 // Defining a struct to represent a library member with name, address, and contact details.
 struct LibraryMember {
