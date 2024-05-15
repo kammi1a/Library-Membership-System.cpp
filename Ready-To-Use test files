@@ -1,4 +1,4 @@
-Test Case 1: Register a New Member
+1)Test Case 1: Register a New Member
 
 Input:
 Choose an option:
@@ -16,7 +16,7 @@ Expected Output:
 Member John Doe registered successfully!
 
 
-Test Case 2: Renew Membership
+2)Test Case 2: Renew Membership
 
 Input:
 Choose an option:
@@ -32,7 +32,7 @@ Expected Output:
 Membership renewed for John Doe
 
 
-Test Case 3: Cancel Membership
+3)Test Case 3: Cancel Membership
 
 Input:
 Choose an option:
@@ -48,7 +48,7 @@ Expected Output:
 Membership canceled for John Doe
 
 
-Test Case 4: Display All Members
+4)Test Case 4: Display All Members
 
 Input:
 Choose an option:
@@ -64,7 +64,7 @@ All Members:
 Name: John Doe, Address: 123 Main Street, Contact: john.doe@example.com
 
 
-Test Case 5: Exit
+5)Test Case 5: Exit
 
 Input:
 Choose an option:
@@ -76,8 +76,8 @@ Choose an option:
 Enter your choice: 5
 
 Expected Output:
-Application exits gracefully.
 
 
-You can use these test cases to validate the functionality of the application by comparing the actual output with the expected output. Adjust the input parameters as needed for additional test scenarios.
+You can use these test cases to validate the functionality of the application by comparing the actual output with the expected output.
+Adjust the input parameters as needed for additional test scenarios.
 
