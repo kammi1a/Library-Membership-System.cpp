@@ -4,7 +4,7 @@
 
 The Library Membership Management System is a simple console-based application designed to manage the membership records of a library. It allows users to register new members, renew membership, cancel membership, and display all existing members. The system is implemented using C++ programming language and utilizes basic data structures and algorithms for managing member records.
 
-**Objectives:**
+### Objectives:**
 
 Provide a user-friendly interface for managing library membership records.
 Allow users to easily register new members by providing their name, address, and contact details.
