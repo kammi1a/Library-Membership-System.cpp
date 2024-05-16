@@ -56,7 +56,7 @@ void displayAllMembers() {
 }
 
 void saveHistoryToFile() {
-    ofstream file("data.txt");
+    ofstream file("data.txt"); // Создает объект ofstream с именем file и открывает файл "data.txt" для записи. Если файл уже существует, он будет перезаписан. Если файл не существует, он будет создан.
     if (file.is_open()) {
         for (const auto& member : members) { //Проходится по всем элементам вектора members. Здесь const auto& означает, что member будет ссылаться на элементы вектора и использоваться для чтения, а const гарантирует, что элементы вектора не будут изменены внутри цикла.
             file << "Name: " << member.name << ", Address: " << member.address << ", Contact: " << member.contact << endl;
