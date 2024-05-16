@@ -58,7 +58,7 @@ void displayAllMembers() {
 void saveHistoryToFile() {
     ofstream file("data.txt");
     if (file.is_open()) {
-        for (const auto& member : members) {
+        for (const auto& member : members) { //Проходится по всем элементам вектора members. Здесь const auto& означает, что member будет ссылаться на элементы вектора и использоваться для чтения, а const гарантирует, что элементы вектора не будут изменены внутри цикла.
             file << "Name: " << member.name << ", Address: " << member.address << ", Contact: " << member.contact << endl;
         }
         cout << "History saved to data.txt" << endl;
