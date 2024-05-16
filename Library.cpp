@@ -11,20 +11,21 @@ struct LibraryMember {
     string contact;
 };
 
-vector<LibraryMember> members; // Объявляем вектор для хранения членов библиотеки глобально.
+vector<LibraryMember> members; // Declaring a vector to store library members globally.
 
 void registerMember(string name, string address, string contact) {
-    members.push_back({name, address, contact}); // Добавляем нового члена в вектор.
+    LibraryMember newMember = {name, address, contact};
+    members.push_back(newMember);
     cout << "Member " << name << " registered successfully!\n";
 }
 
-void renewMembership(string name) {
-    bool found = false; // Флаг, показывающий, был ли найден член библиотеки.
-    for (auto& member : members) { // Проходим по всем членам библиотеки.
-        if (member.name == name) { // Если имя члена соответствует заданному имени.
-            cout << "Membership renewed for " << name << endl;
-            found = true; // Устанавливаем флаг, что член найден.
-            break; // Выходим из цикла, так как член найден.
+void renewMembership(string contact) {
+    bool found = false; // Flag indicating whether member is found or not.
+    for (auto& member : members) {
+        if (member.contact == contact) {
+            cout << "Membership renewed for " << member.name << endl;
+            found = true;
+            break;
         }
     }
     if (!found) { 
@@ -32,12 +33,12 @@ void renewMembership(string name) {
     }
 }
 
-void cancelMembership(string name) {
-    bool found = false; // Флаг, показывающий, был ли найден член библиотеки.
+void cancelMembership(string contact) {
+    bool found = false; // Flag indicating whether member is found or not.
     for (auto it = members.begin(); it != members.end(); ++it) {
-        if (it->name == name) { // Если имя члена соответствует заданному имени.
-            members.erase(it); // Удаляем члена из вектора.
-            cout << "Membership canceled for " << name << endl;
+        if (it->contact == contact) {
+            members.erase(it);
+            cout << "Membership canceled for " << it->name << endl;
             found = true;
             break;
         }
@@ -54,18 +55,20 @@ void displayAllMembers() {
     }
 }
 
-void saveHistoryToFile(string filename) {
-    ofstream file(filename); // Открываем файл для записи.
-    if (file.is_open()) { 
-        for (const auto& member : members) { 
-            file << "Name: " << member.name << ", Address: " << member.address << ", Contact: " << member.contact << endl; // Записываем данные в файл.
+void saveHistoryToFile() {
+    ofstream file("data.txt");
+    if (file.is_open()) {
+        for (const auto& member : members) {
+            file << "Name: " << member.name << ", Address: " << member.address << ", Contact: " << member.contact << endl;
         }
-        cout << "History saved to " << filename << endl; // Выводим сообщение об успешном сохранении.
-    } 
+        cout << "History saved to data.txt" << endl;
+    } else {
+        cerr << "Unable to open file: data.txt" << endl;
+    }
 }
 
 int main() {
-    int choice; // Переменная для хранения выбора пользователя.
+    int choice; // Variable to store user's choice.
     do {
         cout << "Choose an option:\n";
         cout << "1. Register member\n";
@@ -75,40 +78,36 @@ int main() {
         cout << "5. Save history to file\n";
         cout << "6. Exit\n";
         cout << "Enter your choice: ";
-        cin >> choice; // Считываем выбор пользователя.
+        cin >> choice; // Read user's choice.
 
-        string name, address, contact; // Переменные для хранения данных члена библиотеки.
+        string name, address, contact; // Variables for member details.
         switch (choice) {
             case 1: // Опция для регистрации нового члена.
                 cout << "Enter name: ";
                 cin >> name;
                 cout << "Enter address: ";
-                cin >> address; 
+                getline(cin >> ws, address); // Считываем адрес с учётом пробелов.
                 cout << "Enter contact: ";
-                cin >> contact; 
+                cin >> contact; // Считываем контакт.
                 registerMember(name, address, contact); // Вызываем функцию регистрации.
                 break;
-            case 2: // Опция для продления членства.
-                cout << "Enter name to renew membership: ";
-                cin >> name;
-                renewMembership(name);
-            case 3: // Опция для отмены членства.
-                cout << "Enter name to cancel membership: ";
-                cin >> name;
-                cancelMembership(name); 
+            case 2: // Option to renew membership.
+                cout << "Enter contact to renew membership: ";
+                cin >> contact;
+                renewMembership(contact); // Call renewMembership function.
                 break;
-            case 4: // Опция для отображения всех членов.
-                displayAllMembers(); 
+            case 3: // Option to cancel membership.
+                cout << "Enter contact to cancel membership: ";
+                cin >> contact;
+                cancelMembership(contact); // Call cancelMembership function.
                 break;
-            case 5: // Опция для сохранения истории в файл.
-                {
-                    string filename;
-                    cout << "Enter filename to save history: ";
-                    cin >> filename;
-                    saveHistoryToFile(filename); // Вызываем функцию сохранения истории.
-                }
+            case 4: // Option to display all members.
+                displayAllMembers(); // Call displayAllMembers function.
+                break;
+            case 5: // Option to save members to file.
+                saveHistoryToFile(); // Call saveHistoryToFile function.
                 break;
         }
-    } while (choice != 6); // Повторяем цикл, пока пользователь не выберет выход.
-    return 0; 
+    } while (choice != 6); // Loop until user chooses to exit.
+    return 0; // Return 0 to indicate successful completion of program.
 }
