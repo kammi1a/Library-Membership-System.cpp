@@ -62,8 +62,6 @@ void saveHistoryToFile() {
             file << "Name: " << member.name << ", Address: " << member.address << ", Contact: " << member.contact << endl;
         }
         cout << "History saved to data.txt" << endl;
-    } else {
-        cerr << "Unable to open file: data.txt" << endl;
     }
 }
 
