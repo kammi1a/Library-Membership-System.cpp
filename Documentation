@@ -1,4 +1,4 @@
-1. Project's purpose
+**1. Project's purpose**
 The Library Membership Management System is designed to streamline the process of managing library memberships. 
 It allows users to register new members, renew existing memberships, cancel memberships, and display all members' details. 
 The system ensures data integrity, provides a user-friendly command-line interface, and offers functionalities for data persistence and report generation.
