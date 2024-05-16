@@ -17,5 +17,5 @@ Implement error handling mechanisms to handle unexpected situations gracefully.
 **Presentation:** https://www.canva.com/design/DAGFRwDsLTo/7DO12JKoPleQujkx2Yz0OA/edit
 
 **Screenshots:** 
-![Example Image](https://github.com/kammi1a/Library-Membership-System.cpp/blob/main/Снимок%20экрана%202024-05-15%20в%2019.45.37.jpeg)
+![Example Image](https://github.com/kammi1a/Library-Membership-System.cpp/blob/main/CC9EEC0A-DEE0-4233-9584-22FAD7F7435E_1_201_a.jpeg)
 
