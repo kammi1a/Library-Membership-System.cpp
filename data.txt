@@ -1,1 +1,5 @@
-Name: Kami, Address: lop, Contact: 999
+Name: Elza, Address: Jim 9, Contact: 999
+Name: Kamila, Address: Jim 8, Contact: 888
+Name: Arsen, Address: Jim 7, Contact: 777
+Name: Bektur, Address: Jim 5, Contact: 555
+Name: Elita, Address: Isakeeva, Contact: 123
