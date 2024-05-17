@@ -50,17 +50,17 @@ void renewMembership(string contact) {
     bool found = false; // Flag indicating whether member is found or not.
     for (auto& member : members) {
         if (member.contact == contact) {
-            int duration;
-            string unit;
-            cout << "Enter the duration for renewal (number): ";
+            int quantity;
+            string duration;
+            cout << "Enter the quantity for renewal (number): ";
+            cin >> quantity;
+            cout << "Enter the duration for duration (days or years): ";
             cin >> duration;
-            cout << "Enter the unit for duration (days or years): ";
-            cin >> unit;
             
             if (unit == "days" || unit == "years") {
-                cout << "Membership renewed for " << member.name << " for " << duration << " " << unit << endl;
+                cout << "Membership renewed for " << member.name << " for " << quantity << " " << duration << endl;
             } else {
-                cout << "Invalid unit entered. Membership renewal failed.\n";
+                cout << "Membership renewal failed.\n";
             }
             
             found = true;
