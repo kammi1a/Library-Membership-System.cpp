@@ -13,6 +13,33 @@ struct LibraryMember {
 
 vector<LibraryMember> members; // Declaring a vector to store library members globally.
 
+void loadHistoryFromFile() {
+    ifstream file("data.txt"); // Открываем файл "data.txt" для чтения
+    if (file.is_open()) { 
+        string eachline;
+        while (getline(file, eachline)) { // Считываем файл построчно
+            LibraryMember member;
+
+            // Имя
+            size_t pos1 = eachline.find("Name: ") + 6; // 6 символов в "Name: "
+            size_t pos2 = eachline.find(", Address: ");
+            member.name = eachline.substr(pos1, pos2 - pos1); // Извлекаем имя
+
+            // Адрес
+            pos1 = pos2 + 11; // 11 символов в ", Address: "
+            pos2 = eachline.find(", Contact: ");
+            member.address = eachline.substr(pos1, pos2 - pos1); // Извлекаем адрес
+
+            // Контакт
+            pos1 = pos2 + 11; // 11 символов в ", Contact: "
+            member.contact = eachline.substr(pos1); // Извлекаем контакт
+
+            members.push_back(member); 
+        }
+        file.close(); 
+    }
+}
+
 void registerMember(string name, string address, string contact) {
     LibraryMember newMember = {name, address, contact};
     members.push_back(newMember);
@@ -23,7 +50,19 @@ void renewMembership(string contact) {
     bool found = false; // Flag indicating whether member is found or not.
     for (auto& member : members) {
         if (member.contact == contact) {
-            cout << "Membership renewed for " << member.name << endl;
+            int quantity;
+            string duration;
+            cout << "Enter the quantity for renewal (number): ";
+            cin >> quantity;
+            cout << "Enter the duration for duration (days or years): ";
+            cin >> duration;
+            
+            if (duration == "days" || duration == "years") {
+                cout << "Membership renewed for " << member.name << " for " << quantity << " " << duration << endl;
+            } else {
+                cout << "Membership renewal failed.\n";
+            }
+            
             found = true;
             break;
         }
@@ -34,11 +73,11 @@ void renewMembership(string contact) {
 }
 
 void cancelMembership(string contact) {
-    bool found = false; // Flag indicating whether member is found or not.
+    bool found = false; // Flag indicating whether member is found или нет.
     for (auto it = members.begin(); it != members.end(); ++it) {
         if (it->contact == contact) {
-            members.erase(it);
             cout << "Membership canceled for " << it->name << endl;
+            members.erase(it);
             found = true;
             break;
         }
@@ -56,16 +95,19 @@ void displayAllMembers() {
 }
 
 void saveHistoryToFile() {
-    ofstream file("data.txt"); // Создает объект ofstream с именем file и открывает файл "data.txt" для записи. Если файл уже существует, он будет перезаписан. Если файл не существует, он будет создан.
+    ofstream file("data.txt"); // Создает объект ofstream с именем file и открывает файл "data.txt" для записи.
     if (file.is_open()) {
-        for (const auto& member : members) { //Проходится по всем элементам вектора members. Здесь const auto& означает, что member будет ссылаться на элементы вектора и использоваться для чтения, а const гарантирует, что элементы вектора не будут изменены внутри цикла.
+        for (const auto& member : members) { // Проходится по всем элементам вектора members.
             file << "Name: " << member.name << ", Address: " << member.address << ", Contact: " << member.contact << endl;
         }
+        file.close();
         cout << "History saved to data.txt" << endl;
     }
 }
 
 int main() {
+    loadHistoryFromFile(); // Загружаем данные из файла при запуске программы.
+
     int choice; // Variable to store user's choice.
     do {
         cout << "Choose an option:\n";
