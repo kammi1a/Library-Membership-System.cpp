@@ -15,6 +15,4 @@ Allow users to view all existing members' details at any time.
 Ensure data integrity and accuracy in managing member records.
 Implement error handling mechanisms to handle unexpected situations gracefully.
 
-**Screenshots:** 
-![Example Image](https://github.com/kammi1a/Library-Membership-System.cpp/blob/main/CC9EEC0A-DEE0-4233-9584-22FAD7F7435E_1_201_a.jpeg)
 
