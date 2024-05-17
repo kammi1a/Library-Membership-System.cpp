@@ -1,7 +1,7 @@
-```Test Case 1: Register a New Member```
+## Test Case 1: Register a New Member
 
-**Input:**
-Choose an option:
+```Input:```
+Choose an option: 
 1. Register member
 2. Renew membership
 3. Cancel membership
@@ -13,14 +13,14 @@ Enter name: John Doe
 Enter address: 123 Main Street                                                                                    
 Enter contact: 9999999
 
-**Expected Output:**
+```Expected Output:```
 Member John Doe registered successfully!
 
 
 
 
 
-```Test Case 2: Renew Membership```
+## Test Case 2: Renew Membership
 
 **Input:**
 Choose an option:
@@ -40,9 +40,9 @@ Membership renewed for John Doe
 
 
 
-```Test Case 3: Cancel Membership```
+## Test Case 3: Cancel Membership
 
-**Input:**
+```Input:```
 Choose an option:
 1. Register member
 2. Renew membership
@@ -53,13 +53,13 @@ Choose an option:
 Enter your choice: 3                                                                     
 Enter contact to cancel membership: John Doe
 
-**Expected Output:**
+```Expected Output:```
 Membership canceled for John Doe
 
 
-```Test Case 4: Display All Members```
+## Test Case 4: Display All Members
 
-**Input:**
+```Input:```
 Choose an option:
 1. Register member
 2. Renew membership
@@ -69,7 +69,7 @@ Choose an option:
 6. Exit                                                                     
 Enter your choice: 4
 
-**Expected Output:**
+```Expected Output:```
 All Members:
 Name: John Doe, Address: 123 Main Street, Contact: 9999999
 
@@ -77,7 +77,8 @@ Name: John Doe, Address: 123 Main Street, Contact: 9999999
 
 
 
-```Test Case 5: Save history to file```
+## Test Case 5: Save history to file
+```Input:```
 Choose an option:
 1. Register member
 2. Renew membership
@@ -87,16 +88,16 @@ Choose an option:
 6. Exit                                                                     
 Enter your choice: 4
 
-**Expected Output:**
+```Expected Output:```
 History saved to data.txt
 
 
 
 
 
-```Test Case 6: Exit```
+## Test Case 6: Exit
 
-**Input:**
+```Input:```
 Choose an option:
 1. Register member
 2. Renew membership
@@ -106,11 +107,15 @@ Choose an option:
 6. Exit                                                                     
 Enter your choice: 5
 
-**Expected Output:**
+```Expected Output:```
 
 
 
 
 
-```You can use these test cases to validate the functionality of the application by comparing the actual output with the expected output.```
-```Adjust the input parameters as needed for additional test scenarios.```
+
+
+
+
+### You can use these test cases to validate the functionality of the application by comparing the actual output with the expected output.
+### Adjust the input parameters as needed for additional test scenarios.
