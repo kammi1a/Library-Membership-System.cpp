@@ -51,5 +51,5 @@ It allows users to register new members, renew existing memberships, cancel memb
 Follow the on-screen prompts to perform various operations such as registering members, renewing memberships, canceling memberships, and displaying all members' details.
 
 
-**Screenshots:** 
+### 7. Screenshots:
 ![Example Image](https://github.com/kammi1a/Library-Membership-System.cpp/blob/main/CC9EEC0A-DEE0-4233-9584-22FAD7F7435E_1_201_a.jpeg)
